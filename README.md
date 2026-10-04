@@ -39,6 +39,12 @@ account is `@notify@mattyaski.co`; use its API token or change the instance
 setting to use another account. The old `Type4ny-Project/Type4ny` repository
 is archived.
 
+The current deployment is
+`https://type4ny-github-notifier.mattya.workers.dev/github`. A webhook on
+`Type4ny-Project/Misskey` sends events there. To publish later code changes,
+run `npx wrangler deploy` from `cloudflare/` while logged in to the same
+Cloudflare account.
+
 ### Deploy from Cloudflare dashboard
 
 1. Fork this repository to your GitHub account.
@@ -53,7 +59,7 @@ is archived.
    variables. Then deploy the Worker.
 5. In the GitHub settings for `Type4ny-Project/Misskey`, check whether an
    active notifier webhook already exists. Add or update one with payload URL
-   `https://type4ny-github-notifier.<your-workers-subdomain>.workers.dev/github`,
+   `https://type4ny-github-notifier.mattya.workers.dev/github`,
    content type `application/json`, and the same webhook secret. Select the
    events you want from Pushes, Issues, Issue comments, Pull requests, Pull
    request reviews, Pull request review comments, Releases, Stars, Forks,
@@ -67,7 +73,7 @@ stored in Git.
 
 ### Deploy with Wrangler instead
 
-From `cloudflare/`, run `npm install` with Node.js 22 or newer, authenticate
+From `cloudflare/`, run `npm ci` with Node.js 22 or newer, authenticate
 with `npx wrangler login`, then deploy with a local `.env.production` file
 containing both secret names above using
 `npx wrangler deploy --secrets-file .env.production`. That file is Git-ignored.
