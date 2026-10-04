@@ -127,7 +127,7 @@ async function postNote(env, note) {
       noExtractMentions: true,
       noExtractHashtags: true,
     }),
-    redirect: "error",
+    redirect: "manual",
   });
   if (!response.ok) throw new Error(`Misskey returned HTTP ${response.status}`);
 }
