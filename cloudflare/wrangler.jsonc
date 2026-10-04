@@ -1,0 +1,12 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "type4ny-github-notifier",
+  "main": "worker/index.js",
+  "compatibility_date": "2026-10-04",
+  "workers_dev": true,
+  "vars": {
+    "MISSKEY_INSTANCE": "https://mattyaski.co",
+    "GITHUB_REPOSITORY": "Type4ny-Project/Misskey",
+    "PUSH_BRANCH": "develop"
+  }
+}
